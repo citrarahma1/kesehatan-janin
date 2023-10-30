@@ -12,7 +12,7 @@ with col1 :
     accelerations = st.number_input ('Peningkatan detak jantung janin')
     fetal_movement = st.number_input ('Jumlah gerakan janin per detik')
     uterine_contractions = st.number_input ('Jumlah kontraksi uterus per detik')
-    light_decelerations = st.number_input ('Jumlah gerakan janin per detik')
+    light_decelerations = st.number_input ('Jumlah Dekelerasi ringan per detik')
     
 
 with col2 :
