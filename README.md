@@ -69,17 +69,38 @@ deskripsi kolom fetal_health:
 Seluruh kolom pada dataset tersebut memiliki tipe data ```float64```
 
 ## Data Preparation
-Pada tahap data preparation tahapan pertama yang dilakukan adalah penghapusan data yang duplikat dikarenakan terdapat 13 data yang duplikat
+Pertama kita cek dulu apakah ada data yang duplikat atau tidak:
+```
+df.duplicated().sum()
+```
+Mari kita hapus data yang duplikat dikarenakan terdapat 13 data yang duplikat
 ```
 df = df.drop_duplicates()
 ```
-setelah itu menghapus kolom yang tidak akan dipakai:
+setelah itu kita cek apakah ada data yang null:
+```
+df.isnull().sum()
+```
+```
+sns.heatmap(df.isnull())
+```
+![image](https://github.com/citrarahma1/kesehatan-janin/assets/149367504/0185c858-220c-4b85-83fb-39db83c0bbf8)
+
+Dikarnakan tidak ada data yang null maka kita lanjut ketahap selanjutnya yaitu 
+
+menghapus kolom yang tidak akan dipakai:
 ```
 df = df.drop(['mean_value_of_long_term_variability', 'histogram_width','histogram_min',
               'histogram_max', 'histogram_number_of_peaks','histogram_number_of_zeroes',
               'histogram_mode', 'histogram_mean','histogram_median', 'histogram_variance',
               'histogram_tendency'], axis=1)
 ```
+selanjutnya kita lihat bagaimana visualisasi dari datasetnya:
+```
+df.hist(figsize = (20,20), color = "#5F9EA0")
+```
+
+![image](https://github.com/citrarahma1/kesehatan-janin/assets/149367504/910e288f-c8c8-42f9-979f-61a6e0dfbeaf)
 
 ## Modeling
 Tahapan Modeling yang pertama adalah menentukan nilai X dan Y
