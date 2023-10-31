@@ -86,9 +86,12 @@ sns.heatmap(df.isnull())
 ```
 ![image](https://github.com/citrarahma1/kesehatan-janin/assets/149367504/0185c858-220c-4b85-83fb-39db83c0bbf8)
 
-Dikarnakan tidak ada data yang null maka kita lanjut ketahap selanjutnya yaitu 
+Ternyata tidak ada data yang null
 
-menghapus kolom yang tidak akan dipakai:
+Sekarang mari kita cek penyebaran datasetnya
+![image](https://github.com/citrarahma1/kesehatan-janin/assets/149367504/cd791fe3-4817-419e-8364-699f1d7c847b)
+
+lalu menghapus kolom yang tidak akan dipakai:
 ```
 df = df.drop(['mean_value_of_long_term_variability', 'histogram_width','histogram_min',
               'histogram_max', 'histogram_number_of_peaks','histogram_number_of_zeroes',
